@@ -1,41 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaFileAlt, FaEnvelope, FaHistory, FaStar, FaChartLine, FaCog, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { FaFileAlt, FaEnvelope, FaSignOutAlt, FaUser } from 'react-icons/fa';
 import { useAuth } from '../../contexts/AuthContext';
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
+    transition: { staggerChildren: 0.1 }
   }
 };
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1
-  }
+  visible: { y: 0, opacity: 1 }
 };
 
 const DashboardCard = ({ icon: Icon, title, description, link, gradient }) => (
   <motion.div
     variants={itemVariants}
-    whileHover={{ y: -5, scale: 1.02 }}
+    whileHover={{ y: -6, scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
-    className="relative group"
+    className="relative group transition-all"
   >
-    <div className={`absolute inset-0 rounded-2xl ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur`} />
+    <div className={`absolute inset-0 rounded-2xl ${gradient} opacity-0 group-hover:opacity-40 transition-opacity duration-500 blur-sm`} />
     <Link
       to={link}
-      className="block p-8 bg-gray-800/50 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl relative z-10 h-full transform transition-all duration-300"
+      className="relative z-10 block h-full p-8 bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl transition-all duration-300"
     >
       <div className="flex items-center justify-between mb-6">
-        <div className={`p-4 rounded-xl ${gradient}`}>
+        <div className={`p-4 rounded-xl ${gradient} shadow-md`}>
           <Icon className="h-8 w-8 text-white" />
         </div>
         <motion.div
@@ -45,10 +40,10 @@ const DashboardCard = ({ icon: Icon, title, description, link, gradient }) => (
           transition={{ duration: 1, delay: 0.5 }}
         />
       </div>
-      <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
-      <p className="text-gray-300 text-lg">{description}</p>
+      <h3 className="text-2xl font-semibold text-white mb-3">{title}</h3>
+      <p className="text-gray-300">{description}</p>
       <div className="mt-6">
-        <span className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+        <span className="inline-flex items-center text-blue-400 hover:text-blue-300 transition">
           Get Started
           <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -62,23 +57,23 @@ const DashboardCard = ({ icon: Icon, title, description, link, gradient }) => (
 const ProfileCard = ({ user, onLogout }) => (
   <motion.div
     variants={itemVariants}
-    className="bg-gray-800/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6 relative overflow-hidden"
+    className="bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-2xl p-6 relative overflow-hidden shadow-md"
   >
     <div className="absolute top-0 right-0 p-4">
       <button
         onClick={onLogout}
-        className="text-gray-400 hover:text-red-400 transition-colors"
+        className="text-gray-400 hover:text-red-400 transition"
         title="Sign Out"
       >
         <FaSignOutAlt className="h-5 w-5" />
       </button>
     </div>
     <div className="flex items-center space-x-4">
-      <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4 rounded-xl">
+      <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4 rounded-xl shadow-lg">
         <FaUser className="h-6 w-6 text-white" />
       </div>
       <div>
-        <h3 className="text-xl font-bold text-white">{user?.email?.split('@')[0] || 'User'}</h3>
+        <h3 className="text-xl font-semibold text-white">{user?.email?.split('@')[0] || 'User'}</h3>
         <p className="text-gray-400">{user?.email}</p>
       </div>
     </div>
@@ -114,12 +109,12 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gray-950 py-12 px-6 sm:px-8 lg:px-16 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700 opacity-20" />
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 0.1, scale: 1 }}
           transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
           className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-400 via-blue-500 to-transparent"
@@ -132,21 +127,24 @@ export default function Dashboard() {
         animate="visible"
         className="max-w-7xl mx-auto relative z-10"
       >
-        {/* Header Section with Profile */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+        {/* Header + Profile */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
           <motion.div variants={itemVariants} className="lg:col-span-2">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl mb-4">
-              Welcome back, <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">{currentUser?.email?.split('@')[0] || 'User'}</span>
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 leading-tight">
+              Welcome back,{' '}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                {currentUser?.email?.split('@')[0] || 'User'}
+              </span>
             </h1>
-            <p className="text-xl text-gray-300">
-              Ready to create your next masterpiece? Let's get started!
+            <p className="text-lg text-gray-300">
+              Ready to create your next masterpiece? Let’s get started!
             </p>
           </motion.div>
           <ProfileCard user={currentUser} onLogout={handleLogout} />
         </div>
 
-        {/* Main Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Dashboard Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {dashboardCards.map((card, index) => (
             <DashboardCard key={index} {...card} />
           ))}
