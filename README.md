@@ -1,11 +1,10 @@
-Here's a clean and professional version of your `README.md` file in **proper markdown format**, with improved formatting and spacing:
 
-````markdown
+````
 # Resume Pilot
 
 This project was created by **Sharad** and **Ankit Kumar**.
 
-## 🚀 About
+##  About
 
 Resume Pilot is a web application designed to help users generate smart resumes and cover letters efficiently using AI technologies.
 
@@ -56,4 +55,3 @@ Follow these steps to get a local copy up and running:
 
 * [Sharad](https://github.com/13Sharad)
 * Ankit Kumar
-  
