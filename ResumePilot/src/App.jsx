@@ -7,6 +7,7 @@ import SignUp from './components/auth/SignUp';
 import Dashboard from './components/dashboard/Dashboard';
 import ResumeBuilder from './components/resume/ResumeBuilder';
 import CoverLetterBuilder from './components/coverletter/CoverLetterBuilder.jsx';
+import ATSScoreChecker from './components/dashboard/ATSScoreChecker';
 import LandingPage from './components/landing/LandingPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import ErrorBoundary from './components/common/ErrorBoundary';
@@ -50,6 +51,16 @@ function App() {
                   <ProtectedRoute>
                     <ErrorBoundary>
                       <CoverLetterBuilder />
+                    </ErrorBoundary>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/ats-checker"
+                element={
+                  <ProtectedRoute>
+                    <ErrorBoundary>
+                      <ATSScoreChecker />
                     </ErrorBoundary>
                   </ProtectedRoute>
                 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaFileAlt, FaEnvelope, FaSignOutAlt, FaUser } from 'react-icons/fa';
+import { FaFileAlt, FaEnvelope, FaSignOutAlt, FaUser, FaChartBar } from 'react-icons/fa';
 import { useAuth } from '../../contexts/AuthContext';
 
 const containerVariants = {
@@ -27,11 +27,11 @@ const DashboardCard = ({ icon: Icon, title, description, link, gradient }) => (
     <div className={`absolute inset-0 rounded-2xl ${gradient} opacity-0 group-hover:opacity-40 transition-opacity duration-500 blur-sm`} />
     <Link
       to={link}
-      className="relative z-10 block h-full p-8 bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl transition-all duration-300"
+      className="relative z-10 block h-full p-4 sm:p-8 bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl transition-all duration-300"
     >
-      <div className="flex items-center justify-between mb-6">
-        <div className={`p-4 rounded-xl ${gradient} shadow-md`}>
-          <Icon className="h-8 w-8 text-white" />
+      <div className="flex items-center justify-between mb-4 sm:mb-6">
+        <div className={`p-3 sm:p-4 rounded-xl ${gradient} shadow-md`}>
+          <Icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
         </div>
         <motion.div
           className="h-1.5 w-16 bg-gradient-to-r from-transparent to-blue-500 rounded-full"
@@ -40,12 +40,12 @@ const DashboardCard = ({ icon: Icon, title, description, link, gradient }) => (
           transition={{ duration: 1, delay: 0.5 }}
         />
       </div>
-      <h3 className="text-2xl font-semibold text-white mb-3">{title}</h3>
-      <p className="text-gray-300">{description}</p>
-      <div className="mt-6">
-        <span className="inline-flex items-center text-blue-400 hover:text-blue-300 transition">
+      <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2 sm:mb-3">{title}</h3>
+      <p className="text-sm sm:text-base text-gray-300">{description}</p>
+      <div className="mt-4 sm:mt-6">
+        <span className="inline-flex items-center text-blue-400 hover:text-blue-300 transition text-sm sm:text-base">
           Get Started
-          <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </span>
@@ -57,24 +57,24 @@ const DashboardCard = ({ icon: Icon, title, description, link, gradient }) => (
 const ProfileCard = ({ user, onLogout }) => (
   <motion.div
     variants={itemVariants}
-    className="bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-2xl p-6 relative overflow-hidden shadow-md"
+    className="bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 relative overflow-hidden shadow-md"
   >
-    <div className="absolute top-0 right-0 p-4">
+    <div className="absolute top-0 right-0 p-3 sm:p-4">
       <button
         onClick={onLogout}
         className="text-gray-400 hover:text-red-400 transition"
         title="Sign Out"
       >
-        <FaSignOutAlt className="h-5 w-5" />
+        <FaSignOutAlt className="h-4 w-4 sm:h-5 sm:w-5" />
       </button>
     </div>
-    <div className="flex items-center space-x-4">
-      <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4 rounded-xl shadow-lg">
-        <FaUser className="h-6 w-6 text-white" />
+    <div className="flex items-center space-x-3 sm:space-x-4">
+      <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 sm:p-4 rounded-xl shadow-lg">
+        <FaUser className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
       </div>
       <div>
-        <h3 className="text-xl font-semibold text-white">{user?.email?.split('@')[0] || 'User'}</h3>
-        <p className="text-gray-400">{user?.email}</p>
+        <h3 className="text-lg sm:text-xl font-semibold text-white">{user?.email?.split('@')[0] || 'User'}</h3>
+        <p className="text-sm sm:text-base text-gray-400">{user?.email}</p>
       </div>
     </div>
   </motion.div>
@@ -97,6 +97,13 @@ export default function Dashboard() {
       description: 'Generate compelling cover letters tailored to your job applications',
       link: '/cover-letter',
       gradient: 'bg-gradient-to-r from-purple-500 to-pink-600'
+    },
+    {
+      icon: FaChartBar,
+      title: 'ATS Score Checker',
+      description: 'Check your resume\'s ATS compatibility and get detailed insights',
+      link: '/ats-checker',
+      gradient: 'bg-gradient-to-r from-green-500 to-emerald-600'
     }
   ];
 
@@ -109,7 +116,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 py-12 px-6 sm:px-8 lg:px-16 relative overflow-hidden">
+    <div className="min-h-screen bg-gray-950 py-6 sm:py-12 px-4 sm:px-8 lg:px-16 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700 opacity-20" />
@@ -128,23 +135,23 @@ export default function Dashboard() {
         className="max-w-7xl mx-auto relative z-10"
       >
         {/* Header + Profile */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-14">
           <motion.div variants={itemVariants} className="lg:col-span-2">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4 leading-tight">
               Welcome back,{' '}
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 {currentUser?.email?.split('@')[0] || 'User'}
               </span>
             </h1>
-            <p className="text-lg text-gray-300">
-              Ready to create your next masterpiece? Let’s get started!
+            <p className="text-base sm:text-lg text-gray-300">
+              Ready to create your next masterpiece? Let's get started!
             </p>
           </motion.div>
           <ProfileCard user={currentUser} onLogout={handleLogout} />
         </div>
 
         {/* Dashboard Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
           {dashboardCards.map((card, index) => (
             <DashboardCard key={index} {...card} />
           ))}

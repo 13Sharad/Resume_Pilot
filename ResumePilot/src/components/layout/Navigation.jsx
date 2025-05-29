@@ -17,6 +17,7 @@ export default function Navigation() {
         { path: '/dashboard', label: 'Dashboard' },
         { path: '/resume', label: 'Resume Builder' },
         { path: '/cover-letter', label: 'Cover Letter' },
+        { path: '/ats-checker', label: 'ATS Score' },
       ]
     : [
         { path: '/login', label: 'Login' },
