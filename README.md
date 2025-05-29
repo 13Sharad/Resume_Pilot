@@ -13,7 +13,6 @@ ResumePilot is a modern, AI-powered resume and cover letter builder that helps j
 - [Responsive Design](#-responsive-design)
 - [Security](#-security)
 - [Contributing](#-contributing)
-- [License](#-license)
 - [Contributors](#-contributors)
 - [Acknowledgments](#-acknowledgments)
 - [Contact](#-contact)
