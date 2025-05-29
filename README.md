@@ -26,17 +26,17 @@ Resume Pilot is a web application designed to help users generate smart resumes 
    
 2. Navigate into the project directory:
 
-   cd Resume_Pilot
+      cd Resume_Pilot
 
 3. Install dependencies:
 
-  npm install
+      npm install
 
 4. Start the development server:
 
-  npm start
+      npm start
 
 5. Contributors:
 
-  Sharad
-  Ankit Kumar
+      Sharad
+      Ankit Kumar
