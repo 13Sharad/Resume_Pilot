@@ -10,7 +10,7 @@ export default function SignUp() {
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { signup, googleSignIn } = useAuth();
+  const { signup, googleSignIn, guestLogin  } = useAuth();
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
@@ -111,6 +111,25 @@ export default function SignUp() {
             className="w-full py-3 rounded-xl text-white font-semibold bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all disabled:opacity-50"
           >
             {loading ? 'Creating account...' : 'Sign Up'}
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={async () => {
+              try {
+                setError('');
+                setLoading(true);
+                await guestLogin(); // now sets guestMode true & fake user
+                navigate('/dashboard');
+              } catch {
+                setError('Guest sign-in failed');
+              }
+              setLoading(false);
+            }}
+            disabled={loading}
+            className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-xl text-white bg-white/10 hover:bg-white/20 border border-white/10 transition-all mt-4"
+          >
+            Continue as Guest
           </motion.button>
         </form>
 

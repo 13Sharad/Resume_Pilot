@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB30aRXjg4QaKJpt1hKOwOmJpHYK4CsV8w",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "resume-cover-letter-builder.firebaseapp.com",
   projectId: "resume-cover-letter-builder",
   storageBucket: "resume-cover-letter-builder.firebasestorage.app",

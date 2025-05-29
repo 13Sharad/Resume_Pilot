@@ -19,6 +19,7 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [guestMode, setGuestMode] = useState(false);
 
   function signup(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -29,12 +30,19 @@ export function AuthProvider({ children }) {
   }
 
   function logout() {
+    setGuestMode(false);   
     return signOut(auth);
   }
 
   function googleSignIn() {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider);
+  }
+
+  function guestLogin() {
+    setGuestMode(true);
+    setCurrentUser({ guest: true, uid: 'guest' });  // fake guest user
+    return Promise.resolve();
   }
 
   useEffect(() => {
@@ -51,7 +59,9 @@ export function AuthProvider({ children }) {
     signup,
     login,
     logout,
-    googleSignIn
+    googleSignIn,
+    guestLogin,
+    guestMode,
   };
 
   return (

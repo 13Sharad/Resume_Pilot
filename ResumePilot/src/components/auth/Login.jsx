@@ -9,7 +9,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { login, googleSignIn } = useAuth();
+  const { login, googleSignIn, guestLogin  } = useAuth();
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
@@ -95,6 +95,25 @@ export default function Login() {
           >
             {loading ? 'Signing in...' : 'Sign In'}
           </motion.button>
+         <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          onClick={async () => {
+          try {
+            setError('');
+            setLoading(true);
+            await guestLogin(); // now sets guestMode true & fake user
+            navigate('/dashboard');
+          } catch {
+          setError('Guest sign-in failed');
+          }
+          setLoading(false);
+          }}
+          disabled={loading}
+           className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-xl text-white bg-white/10 hover:bg-white/20 border border-white/10 transition-all mt-4"
+         >
+          Continue as Guest
+        </motion.button>
         </form>
 
         <div className="flex items-center justify-between my-6">
