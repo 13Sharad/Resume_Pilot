@@ -24,15 +24,22 @@ Resume Pilot is a web application designed to help users generate smart resumes 
    ```bash
    git clone https://github.com/13Sharad/Resume_Pilot.git
    
-Navigate into the project directory:
-cd Resume_Pilot
+2.Navigate into the project directory:
 
-Install dependencies:
-npm install
+   ```bash
+   cd Resume_Pilot
 
-Start the development server:
-npm start
+3.Install dependencies:
 
-Contributors
-Sharad
-Ankit Kumar
+  ```bash
+  npm install
+
+4.Start the development server:
+
+  ```bash
+  npm start
+
+5.Contributors
+
+  Sharad
+  Ankit Kumar
