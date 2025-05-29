@@ -1,58 +1,145 @@
+# ResumePilot 🚀
 
-````
-# 🚀 **Resume Pilot**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/yourusername/ResumePilot/graphs/commit-activity)
 
-This project was created by **Sharad** and **Ankit Kumar**.
+ResumePilot is a modern, AI-powered resume and cover letter builder that helps job seekers create professional documents and optimize them for ATS (Applicant Tracking Systems).
 
-##  About
+## 📑 Table of Contents
+- [Features](#-features)
+- [Tech Stack](#️-tech-stack)
+- [Getting Started](#-getting-started)
+- [Responsive Design](#-responsive-design)
+- [Security](#-security)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contributors](#-contributors)
+- [Acknowledgments](#-acknowledgments)
+- [Contact](#-contact)
 
-Resume Pilot is a web application designed to help users generate smart resumes and cover letters efficiently using AI technologies.
+## ✨ Features
 
-## 🛠️ Technologies Used
+### 📝 Resume Builder
+- Create professional resumes with modern templates
+- AI-powered content suggestions
+- Real-time editing and preview
+- Export to multiple formats (PDF, DOCX)
 
-- **React.js**
-- **JavaScript**
-- **Tailwind CSS**
-- **Framer Motion**
-- **React Hook Form**
-- **Firebase** – for Authentication and Realtime Database
-- **Gemini AI API** – for content generation
-- **GitHub Copilot** – for AI-assisted coding
-- **Vercel** – for deployment
+### 📄 Cover Letter Generator
+- Generate tailored cover letters
+- AI-powered content suggestions
+- Multiple professional templates
+- Easy customization options
 
-## 🧾 How to Clone and Run the Project
+### 🎯 ATS Score Checker
+- Upload and analyze your resume
+- Get detailed ATS compatibility score
+- Receive specific improvement suggestions
+- Track keyword optimization
+- Format and structure analysis
 
-Follow these steps to get a local copy up and running:
+### 🔐 User Features
+- Secure authentication
+- Save and manage multiple resumes
+- Track application history
+- Responsive design for all devices
 
-1. **Clone the repository:**
+## 🛠️ Tech Stack
 
-   ```bash
-   git clone https://github.com/13Sharad/Resume_Pilot.git
-````
+- **Frontend:**
+  - React.js
+  - Tailwind CSS
+  - Framer Motion
+  - React Router
+  - React Icons
 
-2. **Navigate to the project directory:**
+- **Backend:**
+  - Node.js
+  - Express.js
+  - MongoDB
+  - Firebase Authentication
 
-   ```bash
-   cd Resume_Pilot
-   ```
+## 🚀 Getting Started
 
-3. **Install the dependencies:**
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+- Git
 
-   ```bash
-   npm install
-   ```
+### Installation
 
-4. **Start the development server:**
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/ResumePilot.git
+cd ResumePilot
+```
 
-   ```bash
-   npm start
-   ```
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-5. **Open in browser:**
+3. Set up environment variables
+```bash
+cp .env.example .env
+# Fill in your environment variables
+```
 
-   Navigate to [http://localhost:3000](http://localhost:3000) to view the app.
+4. Start the development server
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+## 📱 Responsive Design
+
+ResumePilot is fully responsive and works seamlessly across:
+- Desktop computers
+- Tablets
+- Mobile phones
+
+## 🔒 Security
+
+- Secure user authentication
+- Protected routes
+- Data encryption
+- Regular security updates
+
+## 🤝 Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👥 Contributors
 
 * [Sharad](https://github.com/13Sharad)
 * [Ankit](https://github.com/ankitsharmait)
+
+## 🙏 Acknowledgments
+
+- Thanks to all contributors
+- Inspired by modern resume builders
+- Built with ❤️ for job seekers
+
+## 📞 Contact
+
+For any queries or support, please reach out to:
+- Email: your.email@example.com
+- Website: [ResumePilot](https://resumepilot.com)
+
+---
+
+Made with ❤️ by the ResumePilot Team
