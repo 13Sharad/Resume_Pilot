@@ -119,9 +119,6 @@ We welcome contributions! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👥 Contributors
 
@@ -137,8 +134,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 For any queries or support, please reach out to:
-- Email: your.email@example.com
-- Website: [ResumePilot](https://resumepilot.com)
+- Email: ankitsharmabela@.com
+- Website: [ResumePilot](https://resume-pilot-amber.vercel.app/)
 
 ---
 
