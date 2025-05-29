@@ -37,7 +37,7 @@ const features = [
 
 const testimonials = [
   {
-    name: 'Sarah Johnson',
+    name: 'Arpita Singh',
     role: 'Software Engineer',
     content: 'The AI suggestions helped me highlight achievements I would have otherwise overlooked. Landed my dream job!',
     image: 'https://randomuser.me/api/portraits/women/1.jpg',
@@ -165,7 +165,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="bg-gray-900 py-12 px-4 sm:px-4 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
-          <p className="text-gray-400">&copy; 2025 Smart Resume Builder. All rights reserved.</p>
+          <p className="text-gray-400">&copy; 2025 ResumePilot. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white"><FaTwitter className="h-5 w-5" /></a>
             <a href="#" className="text-gray-400 hover:text-white"><FaGithub className="h-5 w-5" /></a>
