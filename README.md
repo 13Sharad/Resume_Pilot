@@ -1,6 +1,6 @@
 
 ````
-# Resume Pilot
+# 🚀 **Resume Pilot**
 
 This project was created by **Sharad** and **Ankit Kumar**.
 
@@ -17,6 +17,7 @@ Resume Pilot is a web application designed to help users generate smart resumes 
 - **React Hook Form**
 - **Firebase** – for Authentication and Realtime Database
 - **Gemini AI API** – for content generation
+- **GitHub Copilot** – for AI-assisted coding
 - **Vercel** – for deployment
 
 ## 🧾 How to Clone and Run the Project
@@ -54,4 +55,4 @@ Follow these steps to get a local copy up and running:
 ## 👥 Contributors
 
 * [Sharad](https://github.com/13Sharad)
-* Ankit Kumar
+* [Ankit](https://github.com/ankitsharmait)
