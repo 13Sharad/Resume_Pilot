@@ -19,30 +19,39 @@ Resume Pilot is a web application designed to help users generate smart resumes 
 
 ## How to Clone and Run
 
-1. Clone the repository:
+1. **Clone the repository**:
 
    ```bash
    git clone https://github.com/13Sharad/Resume_Pilot.git
-   
-2. Navigate into the project directory:
+````
 
+2. **Navigate into the project directory**:
 
-      cd Resume_Pilot
+   ```bash
+   cd Resume_Pilot
+   ```
 
+3. **Install dependencies**:
 
-3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
+4. **Create a `.env` file** in the root directory and add your Firebase and Gemini API credentials.
 
-      npm install
+5. **Start the development server**:
 
+   ```bash
+   npm start
+   ```
 
-4. Start the development server:
+6. **Open your browser and visit**:
 
+   ```
+   http://localhost:3000
+   ```
 
-      npm start
+## Contributors
 
-
-5. Contributors:
-
-      Sharad
-      Ankit Kumar
+* **Sharad**
+* **Ankit Kumar**
